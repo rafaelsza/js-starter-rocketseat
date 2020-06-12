@@ -8,7 +8,7 @@ var minhaPromise = function() {
         xhr.onreadystatechange = function() {
             if(xhr.readyState === 4){
                 if(xhr.status === 200){
-                    resolve(JSON.parse(xhr.responseText))
+                    setTimeout(function() { resolve(JSON.parse(xhr.responseText)); }, 2000);
                 } else {
                     reject('Erro na requisição');
                 }
